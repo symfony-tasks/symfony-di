@@ -1,0 +1,25 @@
+{
+  "name": "bankiru-school/symfony-di",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.0",
+    "symfony/dependency-injection": "^3.3",
+    "symfony/config": "^3.2",
+    "symfony/yaml": "^3.2",
+    "psr/container": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "BankiruSchool\\DI\\": "./"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "7.0"
+    }
+  }
+}
