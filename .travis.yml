@@ -10,4 +10,4 @@ install:
   composer --prefer-source install
 
 script:
-  - vendor/bin/phpunit --colors
+  - vendor/bin/phpunit --colors Tasks/Tests/
