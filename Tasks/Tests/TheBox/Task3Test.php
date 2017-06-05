@@ -13,7 +13,7 @@ final class Task3Test extends Task3
     {
         $container = new ContainerBuilder();
         $container->register('static_counter', StaticCounter::class)
-                  ->setLazy(true);
+                  ->setShared(true);
         $container->compile();
         return $container;
     }

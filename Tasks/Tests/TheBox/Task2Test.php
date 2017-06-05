@@ -11,7 +11,7 @@ final class Task2Test extends Task2
     protected function getContainer(): ContainerInterface
     {
         $container = new ContainerBuilder();
-        $container->register('service_container', ContainerBuilder::class);
+        $container->get('service_container');
         $container->compile();
         return $container;
     }
