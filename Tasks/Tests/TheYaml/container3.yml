@@ -1,0 +1,4 @@
+services:
+  static_counter:
+    class: BankiruSchool\DI\Common\FactoryCounter
+    factory: ['BankiruSchool\DI\Common\FactoryCounter', create]
