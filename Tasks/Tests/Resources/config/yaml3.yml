@@ -1,0 +1,7 @@
+parameters:
+    static_counter.class: BankiruSchool\DI\Common\FactoryCounter
+
+services:
+    static_counter:
+        class: '%static_counter.class%'
+        factory: ['%static_counter.class%', 'create']
