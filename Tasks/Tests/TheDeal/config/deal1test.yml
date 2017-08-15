@@ -1,0 +1,22 @@
+services:
+    circular_a:
+        class: 'BankiruSchool\DI\Common\Circular\A'
+        calls:
+            - method: setB
+              arguments:
+                  - '@circular_b'
+
+    circular_b:
+        class: 'BankiruSchool\DI\Common\Circular\B'
+        calls:
+            - method: setC
+              arguments:
+                  - '@circular_c'
+    circular_c:
+        class: 'BankiruSchool\DI\Common\Circular\C'
+        calls:
+            - method: setA
+              arguments:
+                  - '@circular_a'
+
+
