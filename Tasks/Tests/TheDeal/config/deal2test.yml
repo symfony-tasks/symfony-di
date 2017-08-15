@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+
+    circular_a:
+        class: 'BankiruSchool\DI\Common\Circular\A'
+    circular_b:
+        class: 'BankiruSchool\DI\Common\Circular\B'
+    circular_c:
+        class: 'BankiruSchool\DI\Common\Circular\C'

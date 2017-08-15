@@ -1,0 +1,8 @@
+services:
+    greeter:
+        class: 'BankiruSchool\DI\Common\Greeter'
+        public: false
+
+    greeting_controller:
+        class: 'BankiruSchool\DI\Common\GreetingController'
+        arguments: ['@greeter']
