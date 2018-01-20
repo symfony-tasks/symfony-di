@@ -1,13 +1,13 @@
 {
   "name": "bankiru-school/symfony-di",
   "license": "MIT",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "require": {
-    "php": "^7.0",
-    "symfony/dependency-injection": "^3.3",
-    "symfony/config": "^3.2",
-    "symfony/yaml": "^3.2",
-    "symfony/cache": "^3.2",
+    "php": "^7.2",
+    "symfony/dependency-injection": "^4.0",
+    "symfony/config": "^4.0",
+    "symfony/yaml": "^4.0",
+    "symfony/cache": "^4.0",
     "psr/container": "^1.0",
     "psr/log": "^1.0"
   },
@@ -21,7 +21,7 @@
   },
   "config": {
     "platform": {
-      "php": "7.0"
+      "php": "7.2"
     }
   }
 }
