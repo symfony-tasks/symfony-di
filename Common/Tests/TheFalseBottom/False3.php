@@ -94,7 +94,9 @@ abstract class False3 extends TestCase
             $builder->set('cache', $this->createCache());
         }
 
-        $builder->register('tracker', BasicTracker::class);
+        $builder
+            ->register('tracker', BasicTracker::class)
+            ->setPublic(true);
 
         $this->configureContainer($builder);
         $builder->compile();
