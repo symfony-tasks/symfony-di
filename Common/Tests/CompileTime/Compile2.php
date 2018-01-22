@@ -44,7 +44,9 @@ abstract class Compile2 extends TestCase
     {
         $builder = new ContainerBuilder();
 
-        $builder->register('seeker', OptionalRegistry::class);
+        $builder
+            ->register('seeker', OptionalRegistry::class)
+            ->setPublic(true);
 
         return $builder;
     }
