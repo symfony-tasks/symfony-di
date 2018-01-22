@@ -43,6 +43,8 @@ abstract class Compile1 extends TestCase
 
     private function addDependency(ContainerBuilder $builder)
     {
-        $builder->register('optional_dependency', OptionalDependency::class);
+        $builder
+            ->register('optional_dependency', OptionalDependency::class)
+            ->setPublic(true);
     }
 }
