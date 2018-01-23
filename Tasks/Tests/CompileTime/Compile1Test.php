@@ -9,5 +9,6 @@ final class Compile1Test extends Compile1
 {
     protected function configureBuilder(ContainerBuilder $builder)
     {
+        $builder->registerExtension(new Compile1Extension());
     }
 }

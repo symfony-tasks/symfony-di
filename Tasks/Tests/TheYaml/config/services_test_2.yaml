@@ -1,0 +1,4 @@
+services:
+    static_counter:
+        class: BankiruSchool\DI\Common\StaticCounter
+        shared: false
