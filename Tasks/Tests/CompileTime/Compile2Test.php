@@ -9,5 +9,6 @@ final class Compile2Test extends Compile2
 {
     protected function configureBuilder(ContainerBuilder $builder)
     {
+        $builder->addCompilerPass(new Compile1Pass());
     }
 }

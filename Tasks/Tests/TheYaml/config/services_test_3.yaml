@@ -1,0 +1,5 @@
+services:
+    static_counter:
+        factory:
+          - BankiruSchool\DI\Common\FactoryCounter
+          - create
