@@ -9,7 +9,7 @@ abstract class Task4 extends Task1
     /**
      * @runInSeparateProcess
      */
-    final public function testSharedService()
+    final public function testSharedService(): void
     {
         $container = $this->getContainer();
         self::assertEquals(0, StaticCounter::getInitializationsCount());

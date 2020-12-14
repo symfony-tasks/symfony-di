@@ -4,14 +4,8 @@ namespace SymfonyTasks\DI\Common;
 
 final class GreetingController
 {
-    /** @var Greeter */
-    private $greeter;
+    private Greeter $greeter;
 
-    /**
-     * GreetingController constructor.
-     *
-     * @param Greeter $greeter
-     */
     public function __construct(Greeter $greeter)
     {
         $this->greeter = $greeter;

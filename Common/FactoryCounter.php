@@ -6,15 +6,12 @@ final class FactoryCounter implements InitializationCounterInterface
 {
     use CounterTrait;
 
-    /**
-     * StaticCounter constructor.
-     */
     private function __construct()
     {
         static::$initializations++;
     }
 
-    public static function create()
+    public static function create(): FactoryCounter
     {
         return new static();
     }

@@ -7,24 +7,16 @@ use Psr\Log\LoggerInterface;
 
 final class LoggingTracker implements TrackerInterface
 {
-    /** @var TrackerInterface */
-    private $tracker;
-    /** @var LoggerInterface */
-    private $logger;
+    private TrackerInterface $tracker;
 
-    /**
-     * LoggingTracker constructor.
-     *
-     * @param TrackerInterface $tracker
-     * @param LoggerInterface  $logger
-     */
+    private LoggerInterface $logger;
+
     public function __construct(TrackerInterface $tracker, LoggerInterface $logger)
     {
         $this->tracker = $tracker;
-        $this->logger  = $logger;
+        $this->logger = $logger;
     }
 
-    /** {@inheritdoc} */
     public function doTrack(): int
     {
         $this->logger->info('before tracking');

@@ -6,7 +6,7 @@ use SymfonyTasks\DI\Common\Tests\TheBox\Task1;
 
 abstract class Deal1 extends Task1
 {
-    final public function testCircularReferenceInstantiable()
+    final public function testCircularReferenceInstantiable(): void
     {
         $container = $this->getContainer();
         $a         = $container->get('circular_a');
