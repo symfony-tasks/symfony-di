@@ -7,7 +7,7 @@ use SymfonyTasks\DI\Common\Tests\TheBox\Task1;
 
 abstract class False1 extends Task1
 {
-    final public function testGreetingControllerHasHiddenDeps()
+    final public function testGreetingControllerHasHiddenDeps(): void
     {
         $container = $this->getContainer();
         /** @var GreetingController $controller */

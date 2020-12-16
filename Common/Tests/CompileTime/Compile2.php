@@ -2,6 +2,7 @@
 
 namespace SymfonyTasks\DI\Common\Tests\CompileTime;
 
+use Exception;
 use SymfonyTasks\DI\Common\OptionalDependency;
 use SymfonyTasks\DI\Common\OptionalRegistry;
 use SymfonyTasks\DI\Common\Tests\Dumper;
@@ -23,8 +24,9 @@ abstract class Compile2 extends TestCase
      * @dataProvider getServiceVariations
      *
      * @param array $services
+     * @throws Exception
      */
-    final public function testRegistryContainsAllServices(array $services)
+    final public function testRegistryContainsAllServices(array $services): void
     {
         $builder = $this->getBuilder();
         $this->configureBuilder($builder);
@@ -33,7 +35,7 @@ abstract class Compile2 extends TestCase
 
         /** @var OptionalRegistry $seeker */
         $seeker = $builder->get('seeker');
-        self::assertEquals(count($services), count($seeker->getDependencies()));
+        self::assertCount(count($services), $seeker->getDependencies());
 
         Dumper::dump($builder);
     }
@@ -51,7 +53,7 @@ abstract class Compile2 extends TestCase
         return $builder;
     }
 
-    private function updateBuilder(ContainerBuilder $builder, array $ids)
+    private function updateBuilder(ContainerBuilder $builder, array $ids): void
     {
         foreach ($ids as $id) {
             $builder->register($id, OptionalDependency::class)->addTag('find_me');

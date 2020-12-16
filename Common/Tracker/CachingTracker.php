@@ -2,30 +2,27 @@
 
 namespace SymfonyTasks\DI\Common\Tracker;
 
+use Psr\Cache\InvalidArgumentException;
 use SymfonyTasks\DI\Common\TrackerInterface;
 use Psr\Cache\CacheItemPoolInterface;
 
 final class CachingTracker implements TrackerInterface
 {
-    const CACHE_KEY = 'tracker_key';
-    /** @var TrackerInterface */
-    private $tracker;
-    /** @var CacheItemPoolInterface */
-    private $cache;
+    public const CACHE_KEY = 'tracker_key';
 
-    /**
-     * CachingTracker constructor.
-     *
-     * @param TrackerInterface       $tracker
-     * @param CacheItemPoolInterface $cache
-     */
+    private TrackerInterface $tracker;
+
+    private CacheItemPoolInterface $cache;
+
     public function __construct(TrackerInterface $tracker, CacheItemPoolInterface $cache)
     {
         $this->tracker = $tracker;
-        $this->cache   = $cache;
+        $this->cache = $cache;
     }
 
-    /** {@inheritdoc} */
+    /**
+     * @throws InvalidArgumentException
+     */
     public function doTrack(): int
     {
         $item = $this->cache->getItem(self::CACHE_KEY);

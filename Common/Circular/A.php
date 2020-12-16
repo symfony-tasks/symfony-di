@@ -2,26 +2,19 @@
 
 namespace SymfonyTasks\DI\Common\Circular;
 
+use Symfony\Contracts\Service\Attribute\Required;
+
 final class A
 {
-    /**
-     * @var B
-     */
-    private $b;
+    private B $b;
 
-    /**
-     * @return B
-     */
     public function getB(): B
     {
         return $this->b;
     }
 
-    /**
-     * @required
-     * @param B $b
-     */
-    public function setB(B $b)
+    #[Required]
+    public function setB(B $b): void
     {
         $this->b = $b;
     }

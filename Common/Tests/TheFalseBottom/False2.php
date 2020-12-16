@@ -6,7 +6,7 @@ use SymfonyTasks\DI\Common\Tests\TheBox\Task1;
 
 abstract class False2 extends Task1
 {
-    final public function testController()
+    final public function testController(): void
     {
         $container = $this->getContainer();
 

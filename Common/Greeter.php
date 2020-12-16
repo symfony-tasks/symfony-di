@@ -4,7 +4,7 @@ namespace SymfonyTasks\DI\Common;
 
 final class Greeter
 {
-    private $greeted = [];
+    private array $greeted = [];
 
     public function greet(string $name): string
     {

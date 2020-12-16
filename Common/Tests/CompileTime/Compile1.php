@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 abstract class Compile1 extends TestCase
 {
-    final public function testExtensionPresentIfDependencyPresent()
+    final public function testExtensionPresentIfDependencyPresent(): void
     {
         $builder = $this->getBuilder();
         $this->configureBuilder($builder);
@@ -22,7 +22,7 @@ abstract class Compile1 extends TestCase
         Dumper::dump($builder);
     }
 
-    final public function testExtensionNotPresentIfDependencyNotPresent()
+    final public function testExtensionNotPresentIfDependencyNotPresent(): void
     {
         $builder = $this->getBuilder();
         $this->configureBuilder($builder);
@@ -41,7 +41,7 @@ abstract class Compile1 extends TestCase
         return new ContainerBuilder();
     }
 
-    private function addDependency(ContainerBuilder $builder)
+    private function addDependency(ContainerBuilder $builder): void
     {
         $builder
             ->register('optional_dependency', OptionalDependency::class)

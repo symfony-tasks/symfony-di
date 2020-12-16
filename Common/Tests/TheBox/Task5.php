@@ -6,7 +6,7 @@ use SymfonyTasks\DI\Common\FactoryCounter;
 
 abstract class Task5 extends Task3
 {
-    protected function getCounterClass()
+    protected function getCounterClass(): string
     {
         return FactoryCounter::class;
     }

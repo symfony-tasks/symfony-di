@@ -7,7 +7,7 @@ use Symfony\Component\DependencyInjection\Dumper\PhpDumper;
 
 final class Dumper
 {
-    public static function dump(ContainerBuilder $builder)
+    public static function dump(ContainerBuilder $builder): void
     {
         if (!$builder->isCompiled()) {
             $builder->compile();

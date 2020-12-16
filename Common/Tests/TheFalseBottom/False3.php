@@ -2,6 +2,8 @@
 
 namespace SymfonyTasks\DI\Common\Tests\TheFalseBottom;
 
+use PHPUnit\Framework\MockObject\MockObject;
+use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use SymfonyTasks\DI\Common\Tracker\BasicTracker;
 use SymfonyTasks\DI\Common\Tracker\CachingTracker;
 use SymfonyTasks\DI\Common\Tracker\LoggingTracker;
@@ -10,13 +12,12 @@ use PHPUnit\Framework\TestCase;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Cache\Adapter\SimpleCacheAdapter;
-use Symfony\Component\Cache\Simple\ArrayCache;
+
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 abstract class False3 extends TestCase
 {
-    final public function testNoDecorations()
+    final public function testNoDecorations(): void
     {
         $container = $this->getContainer();
 
@@ -27,7 +28,7 @@ abstract class False3 extends TestCase
         self::assertEquals(4, $tracker->doTrack());
     }
 
-    final public function testLoggerDecorator()
+    final public function testLoggerDecorator(): void
     {
         $container = $this->getContainer(true);
 
@@ -38,7 +39,7 @@ abstract class False3 extends TestCase
         self::assertEquals(4, $tracker->doTrack());
     }
 
-    final public function testCacheDecorator()
+    final public function testCacheDecorator(): void
     {
         $container = $this->getContainer(false, true);
 
@@ -59,7 +60,7 @@ abstract class False3 extends TestCase
         self::assertTrue($item->isHit());
     }
 
-    final public function testBothDecorators()
+    final public function testBothDecorators(): void
     {
         $container = $this->getContainer(true, true);
 
@@ -104,10 +105,7 @@ abstract class False3 extends TestCase
         return $builder;
     }
 
-    /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|LoggerInterface
-     */
-    private function createLogger()
+    private function createLogger(): MockObject|LoggerInterface
     {
         $mock = $this->createMock(LoggerInterface::class);
 
@@ -118,6 +116,6 @@ abstract class False3 extends TestCase
 
     private function createCache(): CacheItemPoolInterface
     {
-        return new SimpleCacheAdapter(new ArrayCache());
+        return new ArrayAdapter();
     }
 }

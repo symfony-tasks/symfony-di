@@ -5,9 +5,9 @@ namespace SymfonyTasks\DI\Common;
 final class OptionalRegistry
 {
     /** @var OptionalDependency[] */
-    private $dependencies = [];
+    private array $dependencies = [];
 
-    public function addDependency(OptionalDependency $dependency)
+    public function addDependency(OptionalDependency $dependency): void
     {
         $this->dependencies[] = $dependency;
     }
